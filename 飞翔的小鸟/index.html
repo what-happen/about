@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            canvas{
+                border: 1px solid black;
+                display: block;
+                margin: 50px auto;
+            }
+        </style>
+	</head>
+	<body>
+        <canvas id="mycanvas" width="288" height="512"></canvas>
+	</body>
+    <script type="text/javascript">
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        //定义存放图片地址的数组
+        var imgUrlArr = [
+            {name:"bg_day",path:"images/bg_day.png"},
+            {name:"bird0_0",path:"images/bird0_0.png"},
+            {name:"bird0_1",path:"images/bird0_1.png"},
+            {name:"bird0_2",path:"images/bird0_2.png"},
+            {name:"button_play",path:"images/button_play.png"},
+            {name:"font_048",path:"images/font_048.png"},
+            {name:"font_049",path:"images/font_049.png"},
+            {name:"font_050",path:"images/font_050.png"},
+            {name:"font_051",path:"images/font_051.png"},
+            {name:"font_052",path:"images/font_052.png"},
+            {name:"font_053",path:"images/font_053.png"},
+            {name:"font_054",path:"images/font_054.png"},
+            {name:"font_055",path:"images/font_055.png"},
+            {name:"font_056",path:"images/font_056.png"},
+            {name:"font_057",path:"images/font_057.png"},
+            {name:"land",path:"images/land.png"},
+            {name:"pipe_down",path:"images/pipe_down.png"},
+            {name:"pipe_up",path:"images/pipe_up.png"},
+            {name:"text_game_over",path:"images/text_game_over.png"},
+            {name:"title",path:"images/title.png"},
+            {name:"tutorial",path:"images/tutorial.png"}
+        ];
+        var imgObj={},count=0;
+        for(var i=0;i<imgUrlArr.length;i++){
+            var img=new Image();
+            img.src=imgUrlArr[i].path;
+            imgObj[imgUrlArr[i].name] = img;
+            imgObj[imgUrlArr[i].name].onload = function(){
+                count++;
+                //所有图片资源都加载完之后，执行使用图片资源的代码 
+                if (count === imgUrlArr.length ) {
+                    gameStart();
+                }
+            }
+
+        }
+        
+        function gameStart(){
+                var score = 0;
+                var flag=true;
+                var scene = 1;
+                var opacity=1;
+                var alphaSpeed = -0.1;
+                var high=0;
+                var alpha = 1;
+                var pipeX=300;
+                var pipeDown = parseInt(Math.random()*200)+30;
+                var pipeUp = 400 - 140 - pipeDown;
+                var bx=0;
+                var isDown=true,birdF=0;
+                //小鸟的初始位置
+                var birdX = 100,birdY = 100;
+                var isTouchSky=false;
+                var timer=setInterval(function(){
+                    switch (scene){
+                case 1:
+                   
+                        ctx.clearRect(0,0,288,512);
+                        high+=3;
+                        if(high>=110){
+                            high=110
+                        }
+                        ctx.drawImage(imgObj.bg_day,bx,0);
+                        ctx.drawImage(imgObj.title,55,high);
+                        ctx.drawImage(imgObj.button_play,3,1,110,65,85,350,110,65);
+                        alpha += alphaSpeed;
+                        if (alpha < 0.3) {
+                            alphaSpeed = 0.1;
+                        }
+                        if (alpha > 1) {
+                            alphaSpeed = -0.1;
+                        }
+                        ctx.save();//保存所有设置（例如透明度），不是画面信息
+                        ctx.globalAlpha = alpha;
+                        ctx.drawImage(imgObj.tutorial,85,215);
+                        ctx.restore();//恢复设置
+                    mycanvas.onclick=function(ev){
+                        ev||ev.event;
+                        if(ev.offsetX>85&&ev.offsetX<195&&ev.offsetY>350&&ev.offsetY<415){
+                            scene=2;
+                        }
+                    }
+                    break;
+                    case 2:
+                            ctx.clearRect(0,0,288,512);
+                            bx-=3;
+                            pipeX-=3;
+                            if(bx<=-288){
+                                bx=0;
+                            }
+                            if(pipeX<-55){
+                                pipeX=300;
+                                pipeDown = parseInt(Math.random()*200)+30;
+                                pipeUp = 400 - 140 - pipeDown;
+                                 //计算得分
+                                 flag=true;
+                            }
+                                ctx.drawImage(imgObj.bg_day,bx,0);
+                                ctx.drawImage(imgObj.land,bx,400);
+                                ctx.drawImage(imgObj.bg_day,bx+288,0);
+                                ctx.drawImage(imgObj.land,bx+288,400);
+                                //将开口向下的管道的图片从所需的管道长度处坐标开始截取，然后选取需要截取的宽度和长度，放在画布的某个坐标处，展示所截取图片的宽度和长度
+                                ctx.drawImage(imgObj.pipe_down,0,320-pipeDown,52,pipeDown,pipeX,0,52,pipeDown);
+                                ctx.drawImage(imgObj.pipe_up,0,0,52,pipeUp,pipeX,400-pipeUp,52,pipeUp);
+                                //2.6小鸟下落或者上升状态的改变
+                                if (isDown) {//下落
+                                    // birdY++;//这是一种匀速运动，不符合自由落体规则
+                                    
+                                    birdF++;//使用加速度
+                                    // birdY += birdF;//速度增加太快，用户体验不好
+                                    // birdY += Math.pow(birdF,2)/60////速度增加还是太快，用户体验不好
+                                    birdY += birdF/6;//有加速度,不是特别快，用户体验好
+                                    //改变小鸟旋转角度
+                                    birdAlpha = birdF/18; 
+                                }
+                                else{//上升
+                                    // birdY--;//这是一种匀速运动，不符合要求
+                                    birdF++;//使用加速度
+                                    // birdY -= birdF;//速度越来越快，不符合要求
+                                    birdY -= (25-birdF)/6//有加速度,不是特别快，用户体验好
+                                    birdAlpha = -(25-birdF)/18;
+                                    if (birdF >= 25) {
+                                        isDown = true;//改变小鸟为下落状态
+                                        birdF = 0;//加速度重置为0
+                                    }
+                                }
+                   
+                   
+                                //2.7小鸟旋转：只能旋转画布，不能单击旋转小鸟图片
+                                // 需要先保存当前画布的所有设置，再设置新参数，
+                                // 再绘制小鸟，再恢复画布设置
+                                ctx.save();//先保存当前画布的所有设置
+                                
+                                //把小鸟中心点设置为canvas的新原点（0，0）
+                                ctx.translate(birdX+24,birdY+24);
+                                ctx.rotate(birdAlpha);//以新原点进行旋转
+                                //2.5绘制小鸟
+                                // ctx.drawImage(imgsObj.bird0_0,birdX,birdY);
+                                
+                                //重新计算小鸟相对于新原点的位置
+                                ctx.drawImage(imgObj.bird0_0,-24,-24);
+                                ctx.restore();//恢复画布设置
+                                
+                                //2.8单击任意位置，小鸟上升
+                                mycanvas.onclick = function(){
+                                    isDown = false;//改变小鸟为上升状态
+                                    birdF = 0;//加速度重置为0
+                                }
+                                //小鸟撞管道了
+                                if(birdX+38>pipeX&&birdX+8<pipeX+52){
+                                    if(birdY+10<pipeDown||birdY+40>pipeDown+140){
+                                        scene=3;
+                                    }
+                                }
+                                //小鸟撞地面或撞天空
+                                if(birdY+40>400||birdY<0){
+                                        isTouchSky=true
+                                        scene=3;
+                                }
+                                //计算得分
+                                if(birdX+8>pipeX+52&&flag){
+                                   score++;
+                                   flag=false;
+
+                                }
+                                // 显示得分，转化为字符串，便于取每一位的值
+                                var scoreStr = score.toString();
+                                //得分为0，则为font_048图片，得分为1则为font_049
+                                for (var i = 0; i < scoreStr.length; i++) {
+                                    var numberStr = scoreStr[i];
+                                    var name = "font_0" + (48+Number(numberStr));
+                                    var img = imgObj[name];
+                                    //每取一位数在画布上展示相应的图片，后续的图片x坐标与前面的图片隔开
+                                    ctx.drawImage(img,100+24*i,100)
+                                }
+                                break;
+                                case 3:
+                                    //小鸟往下落
+                                    ctx.drawImage(imgObj.bg_day,0,0);
+                                    ctx.drawImage(imgObj.land,0,400);
+                                    ctx.drawImage(imgObj.pipe_down,0,320-pipeDown,52,pipeDown,pipeX,0,52,pipeDown);
+                                    ctx.drawImage(imgObj.pipe_up,0,0,52,pipeUp,pipeX,400-pipeUp,52,pipeUp);
+                                    //在俩管道内撞到管道则小鸟落在下管道上为止
+                                    console.log(birdX-pipeX)
+                                    if(birdX-pipeX>-30&&birdX-pipeX<40&&birdY+35<pipeDown+140){
+                                        birdY+=3;
+                                        ctx.drawImage(imgObj.bird0_0,birdX,birdY);
+                                    //在俩管道外壁撞到管道则小鸟落在地面
+                                    }else if((birdX-pipeX<-30||birdX-pipeX>40)&&birdY+40<400){
+                                        birdY+=3;
+                                        ctx.drawImage(imgObj.bird0_0,birdX,birdY);
+                                    }
+                                    //撞到天空或地面后则小鸟落在地面
+                                    if(isTouchSky){
+                                        if(birdY+40<400){
+                                            birdY+=3;
+                                            ctx.drawImage(imgObj.bird0_0,birdX,birdY);
+                                        }
+                                    }
+                                    ctx.drawImage(imgObj.bird0_0,birdX,birdY);
+                                    ctx.drawImage(imgObj.text_game_over,40,110);
+                                    ctx.font = "30px 黑体";
+                                    ctx.fillStyle = "#fff";
+                                    ctx.fillText("你得了" + score + "分",60,200);
+                                    ctx.fillText("点击任意位置",60,250);
+                                    ctx.fillText("重新开始游戏",60,300);
+                                    //点击任意位置，重新开始游戏
+                                    mycanvas.onclick = function(){
+                                        clearInterval(timer)
+                                        gameStart();
+                                    }
+                            }
+                },20)       
+        }
+        
+        
+        
+    </script>
+</html>

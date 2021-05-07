@@ -1,0 +1,28 @@
+         *{
+                margin:0;
+                padding: 0;
+            }
+            .banner{
+                width:500px;
+                height:30px;
+                margin:0 auto;
+            }
+            .banner button:nth-child(1){
+                float:left;
+            }
+            .banner button:nth-child(2){
+                float:right;
+            }
+            #tutorial{
+                background-color: #7FFFD4;
+                margin:0 auto;
+                display: block;
+            }
+            #canvas{
+                margin:0 auto;
+                display: block;
+                position: absolute;
+                top:60px;
+                left:50%;
+                margin-left:-200px;
+            }

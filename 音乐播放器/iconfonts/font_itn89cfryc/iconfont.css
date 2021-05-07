@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1615793687818'); /* IE9 */
+  src: url('iconfont.eot?t=1615793687818#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPQAAsAAAAACFAAAAOCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqENIN/ATYCJAMMCwgABCAFhG0HQRtIB1GU7Uma7CtsynAvUqS2IUGAgBKOATi8m+fbf9fi0R3TH+u12AxUABAPz++nnvv/+5ykQKpR7VhOAvpFDVhNzQEKBaTYAunFrjN+DlBPlf53Lv8Ry9s4z5flkBXrwk+bwqUvTQ/03ZyeUBNyGkg4bMBM5v9Tp/5ngWzR+uRG1xRLtJpqtnfzmGKZ/H/ecNtzloqlOxok2OAf907/9g/Weg3OZY5xHnUBdXEg63xv6qLISiQxTyW8mhv0GOz7BFpDisKRo4trqEv0ZYG4xHwb6gmrVNEYaqEs2JvEY4U6u5MNeOR9P/6xok6myOlrRxcPPdj5Of05y21yxkHIhnNDPESOXUAijhV6R0pBdpeS9pMtWwLLKg9+zjbvYFPpYv/wCBlR0rU9kNvMmSOSWVqHJkNOhmM/RIkBPgEbjJydUal6vRgOK4vQXVeGt+taaRq16/S2jUy15ovj4pzn7SfxrJJwMKvuPpsl0vLeywWY8mq6WdgvwkprV4GuaUVUqAoYmTGo6fots15JoOVmUT0XQTctOUQ/aF7L4uMV0im15PQytmYRqkpUWjyW/mvpY4gcsa2ioM6Fcb+1Do3OFP5GfjREzHSm4EbfKE6NonM+OBWT1+gi65vVb/tf5rinLsvjIUyF3TozVpO7NHgfXm0DcwYtuS7b4/T4RNyuS//i9hrUjeKZr8jldEjSv6emVgWPnkn8nfygxjOgSfTdfEJR9QdPN5ZTtNsOr36DDpE9LPXuLEszdT2w3ru8Gq9/wvOwC70AuACwuUIaxh3vFwUEr81u+Xxvz/+6S+BrrvcpsrlCQXO7+rb4glcsa9iSvgrdlidNakn/hdxptZsohlgK2KQHp3111881rifU5iLIVBYhV1tCE7kLCp3dUKrth9ZOx4c7M4SSSA12uCcIkx4gM/AZcpOe0ER+QmHeN5QmowStYzFzZmdLsOZhgbZEjzgTwlw+oKZDNv3GS/Tz2BZxhce4RZGxBDE1I104xgGKITZkQ9+SkhIqeEKO6DGMY05SwUN0pRZIma7pOi16k+byBJoOE5BNQh7CMUEwLm6AOt2lZubzl5AvF7OJiqYf4VtIyLDBCZPGaIAeaweNmi7llcyQzyJJFEEJXII4IjeKjSxHpMWzQsglaYIO6dQanbWjTbXa9Prk/vZAS1+bRxZ5JN3lwB74E+bW8Lxxg9mBBQAAAA==') format('woff2'),
+  url('iconfont.woff?t=1615793687818') format('woff'),
+  url('iconfont.ttf?t=1615793687818') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1615793687818#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 25px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shangyishou:before {
+  content: "\e683";
+}
+
+.icon-xiayishou:before {
+  content: "\e684";
+}
+

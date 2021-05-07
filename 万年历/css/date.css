@@ -1,0 +1,19 @@
+*{
+      margin: 0;
+      padding: 0;
+}
+table{
+       text-align: center;
+       border-collapse: collapse;
+       margin:0 auto;
+	}
+th{
+       border:1px solid #eeeeee
+}
+td{
+       width:50px;
+        border:1px solid #eeeeee
+}
+.iconfontleft:hover,.iconfontright:hover,.iconfontzuo:hover,.iconfontyou:hover{
+        cursor: pointer;
+  }

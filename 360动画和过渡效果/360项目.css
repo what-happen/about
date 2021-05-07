@@ -1,0 +1,279 @@
+*{
+            margin:0;
+            padding: 0;
+        }
+        ul{
+            margin-right:50px;
+            overflow: hidden;
+		
+        }
+		.img{
+			float:left;
+			width:160px;
+			height:12px;
+			background:url('iconlist_1.png') no-repeat ;
+			background-position:-869px -98px
+		}
+        li{
+            float:right;
+            list-style: none;
+            margin:10px;
+			padding:10px;
+        }
+        .title{
+            width:450px;
+            height:100px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:50%;
+            top:220px;
+            transform: translateX(-50%);
+            background-position: -870px 0px;
+        }
+        .bgImg{
+            background: url('bg_1.jpg') no-repeat;
+            height:700px;
+            position: relative;
+        }
+        .one{
+            width:175px;
+            height:175px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            background-position: 1px 1px;
+            animation: oneMove 5s linear;
+            animation-fill-mode:forwards;
+        }
+        .one::before,.two::before,.three::before,.four::before,.one::after,.two::after,.three::after,.four::after{
+            position: absolute;
+            content:'';
+            top:100%;
+            left:30px;
+            right:30px;
+            box-shadow: 0 0 7px 1px #999999;
+        }
+        .main{
+            width:175px;
+            height:175px;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            animation: mainMove 9s linear;
+            animation-fill-mode:forwards;
+        }
+        .main::before,.main::after{
+            position: absolute;
+            content:'';
+            top:100%;
+            left:30px;
+            right:30px;
+            box-shadow: 0 0 7px 1px #999999;
+        }
+        .two{
+            width:175px;
+            height:175px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            background-position: -173px 1px;
+            animation: twoMove 6s linear;
+            animation-fill-mode:forwards;
+        } 
+        .three{
+            width:175px;
+            height:175px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            background-position: -347px 1px;
+            animation: threeMove 7s linear;
+            animation-fill-mode:forwards;
+        }
+        .four{
+            width:175px;
+            height:175px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            background-position: -521px 1px;
+            animation: fourMove 8s linear;
+            animation-fill-mode:forwards;
+        }
+        .five{
+            width:175px;
+            height:175px;
+            background: url('iconlist_1.png') no-repeat;
+            position: absolute;
+            left:-200px;
+            top:400px;
+            background-position: -695px 1px;
+            animation: fiveMove 9s linear;
+            animation-fill-mode:forwards;
+            
+        } 
+        @keyframes mainMove {
+               0%{
+                    transform:  translateX(0);
+                }
+                100%{
+                    transform:  translateX(1350px) ;
+                }
+        }
+         @keyframes fiveMove {
+                0%{
+                    transform:  translateX(0) rotateZ(0deg);
+                }
+                100%{
+                    transform:  translateX(1350px) rotateZ(3600deg);
+                }
+            } 
+            @keyframes fourMove{
+                0%{
+                    transform:  translateX(0) ;
+                }
+                100%{
+                    transform:  translateX(1200px);
+                }
+            }
+            @keyframes threeMove{
+                0%{
+                    transform:  translateX(0) ;
+                }
+                100%{
+                    transform:  translateX(1050px);
+                }
+            }
+            @keyframes twoMove{
+                0%{
+                    transform:  translateX(0) ;
+                }
+                100%{
+                    transform:  translateX(900px);
+                }
+            }
+            @keyframes oneMove{
+                0%{
+                    transform:  translateX(0) ;
+                }
+                100%{
+                    transform:  translateX(750px);
+                }
+            }
+            .bg1{
+                width:1000px;
+                height:630px;
+                background: url('index.png') no-repeat;
+                background-position: -182px -610px;
+                margin :0 auto
+            }
+            .bg2{
+                width:100%;
+                height:1100px;
+                background: url('bg_2.jpg') no-repeat center;
+                position: relative;
+            }
+            .bg2-left{
+                width:550px;
+                height:400px;
+                background: url('iconlist_2.png') no-repeat;
+                position: absolute;
+                left:300px;
+                top:200px;
+            }
+            .bg2-right{
+                width:250px;
+                height:525px;
+                background: url('iconlist_2.png') no-repeat;
+                background-position: -572px -2px;
+                position: absolute;
+                right:600px;
+                top:200px;
+                transition:all 4s;
+            }
+            .bg2-right:hover{
+                transform: rotate(30deg);
+            }
+            .footer-container{
+                width:1200px;
+                margin:0 auto;
+                overflow: hidden;
+            }
+            .banner{
+                width:400px;
+                height:100%;
+                float:left;
+                overflow: hidden;
+                margin:10px 0;
+            }
+            .banner div{
+                float:left;
+            }
+            .icons{
+                margin-left:10px;
+                
+                
+            }
+            .icons p{
+                line-height: 30px;
+                margin:5px 0  0;
+                
+            }
+            .icons-one{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: 0 0;
+                
+            }
+            .icons-one:hover,.icons-two:hover,.icons-three:hover,.icons-four:hover,.icons-five:hover,.icons-six:hover{
+                animation: shiny .5s linear;
+            }
+            @keyframes shiny {
+                0%{
+                    opacity: 1;
+                    transform: rotate(0deg);
+                }
+                50%{
+                    opacity: 0.3;
+                    transform: rotate(15deg);
+                }
+                100%{
+                    opacity: 1;
+                    transform: rotate(0deg);
+                }
+            }
+            .icons-two{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: -85px 0;
+            }
+            .icons-three{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: -170px 0;
+            }
+            .icons-four{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: 0px -86px;
+            }
+            .icons-five{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: -85px -86px;
+            }
+            .icons-six{
+                width:80px;
+                height:80px;
+                background: url('iconlist_3.png') no-repeat;
+                background-position: -170px -86px;
+            }
