@@ -1,0 +1,10 @@
+<!--pages/film/film.wxml-->
+<import src="newFilm/newFilm.wxml"/>
+<view class="container">
+  <view bindtap="changeTab" class="navbar">
+     <text data-index="0" class="{{activeClass==0?'active':''}}">热映</text>
+     <text data-index="1" class="{{activeClass==1?'active':''}}">影院</text>
+     <text data-index="2" class="{{activeClass==2?'active':''}}">待映</text>
+  </view>
+  <template is="{{item}}"></template>
+</view>

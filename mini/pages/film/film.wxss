@@ -1,0 +1,26 @@
+/* pages/film/film.wxss */
+@import 'newFilm/newFilm.wxss';
+.container{
+  overflow: hidden;
+}
+.navbar{
+  width:100%;
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:50rpx;
+  line-height: 50rpx;
+  z-index:99;
+  background-color: #fff;
+}
+.navbar text + text{
+  margin-left:30rpx;
+}
+.active{
+  color:red;
+  font-weight: bold;
+  font-size:35rpx;
+}

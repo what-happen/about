@@ -1,0 +1,204 @@
+<template name="film">
+  <view class="content first">
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">1921</text>
+        <text class="score">猫眼评分<text>9.4</text></text>
+        <text class="actor">主演:黄轩，倪妮，王仁君,詹姆斯.柯登</text>
+        <text class="desc">今天176家影院放映2427场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">革命者</text>
+        <text class="score">猫眼评分<text>9.4</text></text>
+        <text class="actor">主演:张颂文，李易峰，佟亚丽</text>
+        <text class="desc">今天175家影院放映1763场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">了不起的老爸</text>
+        <text class="score">猫眼评分<text>9.2</text></text>
+        <text class="actor">主演:王砚辉，张宥浩，龚蓓苾</text>
+        <text class="desc">今天18家影院放映353场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">比得兔2:逃跑计划</text>
+        <text class="score">猫眼评分<text>9.1</text></text>
+        <text class="actor">主演:郭麒麟,詹姆斯.柯登</text>
+        <text class="desc">今天16家影院放映533场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">当男人恋爱时</text>
+        <text class="score">猫眼评分<text>8.4</text></text>
+        <text class="actor">主演:邱泽，蔡振南</text>
+        <text class="desc">今天153家影院放映542场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">1921</text>
+        <text class="score">猫眼评分<text>9.4</text></text>
+        <text class="actor">主演:黄轩，倪妮，王仁君,詹姆斯.柯登</text>
+        <text class="desc">今天176家影院放映2427场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">1921</text>
+        <text class="score">猫眼评分<text>9.4</text></text>
+        <text class="actor">主演:黄轩，倪妮，王仁君,詹姆斯.柯登</text>
+        <text class="desc">今天176家影院放映2427场</text>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">1921</text>
+        <text class="score">猫眼评分<text>9.4</text></text>
+        <text class="actor">主演:黄轩，倪妮，王仁君,詹姆斯.柯登</text>
+        <text class="desc">今天176家影院放映2427场</text>
+        <button>购票</button>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="newfilm">
+  <view class="content first">
+    <view class="title">7月9日 周五</view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">中国医生</text>
+        <text class="text"><text>358232</text>人想看</text>
+        <text class="text">类型:剧情</text>
+        <text class="text">主演:张涵予，袁泉，朱亚文</text>
+        <button>预售</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">中国医生</text>
+        <text class="text"><text>358232</text>人想看</text>
+        <text class="text">类型:剧情</text>
+        <text class="text">主演:张涵予，袁泉，朱亚文</text>
+        <button>预售</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">中国医生</text>
+        <text class="text"><text>358232</text>人想看</text>
+        <text class="text">类型:剧情</text>
+        <text class="text">主演:张涵予，袁泉，朱亚文</text>
+        <button>预售</button>
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="left">
+        <image src="/images/iqiyi.png"></image>
+      </view>
+      <view class="right">
+        <text class="name">中国医生</text>
+        <text class="text"><text>358232</text>人想看</text>
+        <text class="text">类型:剧情</text>
+        <text class="text">主演:张涵予，袁泉，朱亚文</text>
+        <button>预售</button>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="title">7月10日 周六</view>
+      <view class="content-item">
+        <view class="left">
+          <image src="/images/iqiyi.png"></image>
+        </view>
+        <view class="right">
+          <text class="name">不在远方</text>
+          <text class="text"><text>620</text>人想看</text>
+          <text class="text">类型:剧情，喜剧</text>
+          <text class="text">主演:高晓攀，江欣骅，郑岚</text>
+          <button>想看</button>
+      </view>
+    </view>
+    <view class="content-item">
+        <view class="left">
+          <image src="/images/iqiyi.png"></image>
+        </view>
+        <view class="right">
+          <text class="name">不在远方</text>
+          <text class="text"><text>620</text>人想看</text>
+          <text class="text">类型:剧情，喜剧</text>
+          <text class="text">主演:高晓攀，江欣骅，郑岚</text>
+          <button>想看</button>
+      </view>
+    </view>
+    <view class="content-item">
+        <view class="left">
+          <image src="/images/iqiyi.png"></image>
+        </view>
+        <view class="right">
+          <text class="name">不在远方</text>
+          <text class="text"><text>620</text>人想看</text>
+          <text class="text">类型:剧情，喜剧</text>
+          <text class="text">主演:高晓攀，江欣骅，郑岚</text>
+          <button>想看</button>
+      </view>
+    </view>
+    <view class="content-item">
+        <view class="left">
+          <image src="/images/iqiyi.png"></image>
+        </view>
+        <view class="right">
+          <text class="name">不在远方</text>
+          <text class="text"><text>620</text>人想看</text>
+          <text class="text">类型:剧情，喜剧</text>
+          <text class="text">主演:高晓攀，江欣骅，郑岚</text>
+          <button>想看</button>
+      </view>
+    </view>
+  </view>
+</template>
